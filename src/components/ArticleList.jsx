@@ -21,7 +21,6 @@ const ArticleList = () => {
       {/* <span>02</span> */}
       <ul className="Article-list">
         {articleList.map((article) => {
-          console.log(article);
           return (
             // <Link to={`/articles/${article.article_id}`}>
             <li className="Article--card" key={article.article_id}>
