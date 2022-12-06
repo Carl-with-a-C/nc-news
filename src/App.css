@@ -1,38 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@200;400;600");
+
+/*-----------RESET----------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: solid red 1px; */
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* html {
+  color-scheme: dark light;
+} */
+
+/*--------APP----------*/
+
 .App {
-  text-align: center;
+  background-color: #01aab3;
+  color: #ffa001;
+  font-family: "Anek Kannada", sans-serif;
+  width: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*----------HEADER---------*/
+
+.Header {
+  text-align: left;
+  font-weight: 400;
+  padding: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*--------NAVBAR-----------*/
+
+.Navbar {
+  background-color: #3200e0;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*---------TOPICS-----------*/
+
+/*-----ARTICLE_LIST----------*/
+
+.ArticleList {
+  background-color: #dcd8d8;
+  color: #0b0905;
+  margin: 0 0.5em 0 0.5em;
+  align-content: center;
+  padding: 3em 1em 1em 1em;
+  border-radius: 45px 45px 0 0;
+  box-shadow: 0 -5px 6px rgb(0, 0, 0, 0.15);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.ArticleList li {
+  min-width: 100%;
+  background-color: rgb(0, 0, 0, 0.05);
+  border-radius: 45px;
+  display: inline-block;
+  padding: 1em 2.5em 2em 2.5em;
+  letter-spacing: -5%;
+  line-height: 1.75em;
+  margin-bottom: 2px;
+  max-height: 130px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ArticleList li > h1 {
+  color: #3200e0;
+  font-size: 23px;
+}
+
+.ArticleList li > h2 {
+  font-size: 30px;
+  line-height: 0.8em;
+  max-height: 50px;
+  overflow-y: hidden;
+  padding-top: 2px;
+
+  /* background-color: linear-gradient(180deg, rgba(11, 9, 5, 1) 27%, rgba(11, 9, 5, 0) 100%); */
+  background: -webkit-linear-gradient(
+    270deg,
+    rgba(11, 9, 5, 1) 0%,
+    rgba(11, 9, 5, 0.1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ArticleList li > p {
+  color: #3200e0;
+  font-size: 12px;
 }
