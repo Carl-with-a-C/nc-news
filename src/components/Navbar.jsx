@@ -1,7 +1,11 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
 
 const Navbar = () => {
-  return <div className="Navbar">Navbar</div>;
+  return (
+    <Routes>
+      <nav className="Navbar">Navbar</nav>
+    </Routes>
+  );
 };
 
 export default Navbar;
