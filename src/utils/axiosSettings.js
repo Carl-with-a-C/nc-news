@@ -18,15 +18,11 @@ export const getArticleList = () => {
 };
 
 const getArticle = (article_id) => {
-  const urlString = "/articles";
+  const urlString = `/articles/${article_id}`;
 
-  return thingsApi
-    .get(urlString, {
-      params: { article_id },
-    })
-    .then(({ data }) => {
-      console.log(data);
-    });
+  return thingsApi.get(urlString).then(({ data }) => {
+    return data;
+  });
 };
 
 export default getArticle;
