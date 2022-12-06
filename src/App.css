@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@200;400;600");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@200;400;600&family=Inter:wght@400;700&family=Julius+Sans+One&display=swap");
 
 /*-----------RESET----------*/
 *,
@@ -78,33 +78,48 @@ li {
   background-color: rgb(0, 0, 0, 0.05);
   border-radius: 45px;
   display: inline-block;
-  padding: 1em 2.5em 2em 2.5em;
+  padding: 0.75em 2.5em 0.75em 2.5em;
   letter-spacing: -5%;
-  line-height: 1.75em;
-  margin-bottom: 2px;
-  max-height: 130px;
+  line-height: 1.8em;
+  margin-bottom: 8px;
+  min-height: 120px;
 }
 
 .ArticleList li > h1 {
+  font-family: "Julius", sans-serif;
   color: #3200e0;
-  font-size: 23px;
+  font-size: 16px;
 }
 
 .ArticleList li > h2 {
-  font-size: 30px;
+  font-size: 18px;
   line-height: 0.8em;
   max-height: 50px;
   overflow-y: hidden;
-  padding-top: 2px;
+  padding-top: 1.5px;
+  margin-bottom: 2px;
+  font-family: "Inter ", sans-serif;
+  letter-spacing: -1.5px;
+}
+
+.ArticleList li > h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 0.8em;
+  letter-spacing: -7.5%;
+  max-height: 50px;
+  overflow-y: hidden;
+  padding-top: 4px;
 
   /* background-color: linear-gradient(180deg, rgba(11, 9, 5, 1) 27%, rgba(11, 9, 5, 0) 100%); */
   background: -webkit-linear-gradient(
     270deg,
-    rgba(11, 9, 5, 1) 0%,
-    rgba(11, 9, 5, 0.1) 100%
+    rgb(76, 61, 57, 1) 0%,
+    rgba(76, 61, 57, 0.1) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
 }
 
 .ArticleList li > p {
