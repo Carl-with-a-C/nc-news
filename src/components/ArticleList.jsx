@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getArticleList } from "../utils/getArticleList";
-import { Link } from "react-router-dom";
+import { getArticleList } from "../utils/axiosSettings";
+// import { Link } from "react-router-dom";
 
 const ArticleList = () => {
   const [articleList, setArticleList] = useState([{}]);
