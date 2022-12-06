@@ -7,8 +7,6 @@ const Article = () => {
 
   const { article_id } = useParams();
 
-  console.log(currentArticle.created_at);
-
   useEffect(() => {
     getArticle(article_id).then(({ article }) => {
       setCurrentArticle(article);

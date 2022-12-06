@@ -1,7 +1,11 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Topics = () => {
-  return <div>Topics</div>;
+  return (
+    <Link to="/articles">
+      <div>Click for Articles</div>;
+    </Link>
+  );
 };
 
 export default Topics;
