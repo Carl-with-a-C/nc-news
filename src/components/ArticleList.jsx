@@ -21,7 +21,7 @@ const ArticleList = () => {
               <h1>{article.topic}</h1>
               <h2>{article.title}</h2>
               <p>
-                {article.author} | {article.created_at.slice(0, 10)}
+                {article.author} | {article.created_at}
               </p>
             </li>
           );
