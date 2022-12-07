@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([{}]);
+  const [isLoading, setISLoading] = useState(true);
   const [commentsOpen, setCommentsOpen] = useState(false);
 
   const toggleComments = () => {
@@ -11,7 +12,6 @@ const Comments = ({ article_id }) => {
 
   useEffect(() => {
     getComments(article_id).then(({ comments }) => {
-      console.log(comments, "<<<comments");
       setComments(comments);
     });
   }, [article_id]);
@@ -20,7 +20,6 @@ const Comments = ({ article_id }) => {
     <button
       onClick={() => {
         toggleComments();
-        console.log(commentsOpen);
       }}
       className="Comments"
     >
@@ -32,7 +31,6 @@ const Comments = ({ article_id }) => {
         id="back-btn"
         onClick={() => {
           toggleComments();
-          console.log(commentsOpen);
         }}
       >
         X
