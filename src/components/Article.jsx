@@ -1,5 +1,7 @@
+import Comments from "./Comments";
+
 import { useState, useEffect } from "react";
-import getArticle from "../utils/axiosSettings";
+import { getArticle } from "../utils/axiosSettings";
 import { useParams } from "react-router";
 
 const Article = () => {
@@ -23,6 +25,7 @@ const Article = () => {
         <strong>{currentArticle.author}</strong> | {currentArticle.created_at}
       </small>
       <p>{currentArticle.body}</p>
+      <Comments article_id={article_id} />
     </article>
   );
 };

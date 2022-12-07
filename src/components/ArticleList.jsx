@@ -14,6 +14,8 @@ const ArticleList = () => {
     });
   }, []);
 
+  console.log(articleList);
+
   return loading ? (
     <h1>Loading...</h1>
   ) : (

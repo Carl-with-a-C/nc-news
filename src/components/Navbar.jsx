@@ -2,9 +2,11 @@ import { Routes, Route } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <Routes>
-      <nav className="Navbar">Navbar</nav>
-    </Routes>
+    <nav className="Navbar">
+      <span>Profile</span>
+      <span>Settings</span>
+      <span>Favorites</span>
+    </nav>
   );
 };
 
