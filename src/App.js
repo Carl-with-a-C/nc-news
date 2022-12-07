@@ -9,13 +9,16 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Navbar />
+      <div className="App-layer2">
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Topics />} />
-        <Route path="/articles" element={<ArticleList />} />
-        <Route path="/articles/:article_id" element={<Article />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Topics />} />
+          <Route path="/articles" element={<ArticleList />} />
+          <Route path="/articles/:article_id" element={<Article />} />
+        </Routes>
+      </div>
     </div>
   );
 }

@@ -10,6 +10,7 @@ export const getArticleList = () => {
   return thingsApi
     .get(urlString)
     .then(({ data }) => {
+      console.log(data);
       return data.articles;
     })
     .catch((error) => {
@@ -17,12 +18,29 @@ export const getArticleList = () => {
     });
 };
 
-const getArticle = (article_id) => {
+export const getArticle = (article_id) => {
   const urlString = `/articles/${article_id}`;
 
-  return thingsApi.get(urlString).then(({ data }) => {
-    return data;
-  });
+  return thingsApi
+    .get(urlString)
+    .then(({ data }) => {
+      return data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
-export default getArticle;
+export const getComments = (article_id) => {
+  const urlString = `/articles/${article_id}/comments`;
+
+  return thingsApi
+    .get(urlString)
+    .then(({ data }) => {
+      console.log(data, "<<<data");
+      return data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};

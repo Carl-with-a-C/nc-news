@@ -34,6 +34,12 @@ a {
   color: inherit;
 }
 
+#back-btn {
+  margin: -1em 0 1em 0;
+  color: #ffa001;
+  border: solid 3px #ffa001;
+}
+
 /* html {
   color-scheme: dark light;
 } */
@@ -41,18 +47,26 @@ a {
 /*--------APP----------*/
 
 .App {
-  background-color: #01aab3;
+  background-color: #3200e0;
   color: #ffa001;
   font-family: "Anek Kannada", sans-serif;
   width: 100vw;
+}
+
+.App-layer2 {
+  background-color: #01aab3;
+  border-radius: 45px 45px 0 0;
 }
 
 /*----------HEADER---------*/
 
 .Header {
   text-align: left;
-  font-weight: 400;
-  padding: 1em;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0.5em 0 0.5em 2em;
+  border-radius: 45px 45px 0 0;
+  box-shadow: 0 -5px 6px rgb(0, 0, 0, 0.15);
 }
 
 /*--------NAVBAR-----------*/
@@ -60,6 +74,20 @@ a {
 .Navbar {
   background-color: #3200e0;
   color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  display: flex;
+}
+
+.Navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  gap: 1.5em;
+  background-color: rgba(244, 230, 217, 0.5);
+  border-radius: 25px;
+  padding: 0.2em 1em;
 }
 
 /*---------TOPICS-----------*/
@@ -72,10 +100,11 @@ a {
   margin: 0 0.75em 0 0.75em;
   align-content: center;
   padding: 3em 1.2em 1em 1.2em;
-  border-radius: 45px 45px 0 0;
+  border-radius: 45px;
   box-shadow: 0 -5px 6px rgb(0, 0, 0, 0.15);
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  height: 88vh;
 }
 
 .ArticleList li {
@@ -150,7 +179,7 @@ a {
   box-shadow: 0 -5px 6px rgb(0, 0, 0, 0.15);
   overflow-y: scroll;
   overflow-x: hidden;
-  min-height: 95vh;
+  height: 88vh;
 }
 
 .Article h1 {
@@ -181,4 +210,43 @@ a {
 .Article small {
   font-size: 18px;
   color: #017d84;
+}
+
+/*-------COMMENTS--------*/
+
+.Comments {
+  background-color: #4c3d39;
+  border-radius: 45px;
+  box-shadow: 0 -5px 6px rgb(0, 0, 0, 0.15);
+  padding: 3em 1.2em 1em 1.2em;
+  margin: 0 -1.2em 0 -1.2em;
+  min-width: 50vw;
+}
+
+.Comments li {
+  margin-bottom: 3em;
+}
+
+.Comments h1 {
+  color: #ff2500;
+}
+
+.Comments h2 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.Comments p {
+  color: #f4e6d9;
+}
+
+.Comments button {
+  background: none;
+  border: solid 3px #01aab3;
+  border-radius: 50px;
+  color: #01aab3;
+  font-size: 30px;
+  font-weight: 400;
+  width: 50px;
+  height: 50px;
 }
