@@ -1,5 +1,6 @@
 import { getComments } from "../utils/axiosSettings";
 import { useState, useEffect } from "react";
+import closeBtn from "../icons/closeBtn.svg";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([{}]);
@@ -33,7 +34,7 @@ const Comments = ({ article_id }) => {
           toggleComments();
         }}
       >
-        X
+        <img src={closeBtn} alt="close button"></img>
       </button>
       <ul>
         {comments.map((comment) => {
