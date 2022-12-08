@@ -10,7 +10,6 @@ export const getArticleList = () => {
   return thingsApi
     .get(urlString)
     .then(({ data }) => {
-      console.log(data);
       return data.articles;
     })
     .catch((error) => {
@@ -37,8 +36,20 @@ export const getComments = (article_id) => {
   return thingsApi
     .get(urlString)
     .then(({ data }) => {
-      console.log(data, "<<<data");
       return data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+export const updateVote = (article_id) => {
+  const urlString = `/articles/${article_id}`;
+
+  return thingsApi
+    .patch(urlString, { inc_votes: 1 })
+    .then(({ data }) => {
+      return data.article;
     })
     .catch((error) => {
       console.log(error);
