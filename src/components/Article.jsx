@@ -50,7 +50,7 @@ const Article = () => {
         <img id="upvote-img" src={upvoteIcon} alt="upvote icon"></img>
         <small>{articleVotes}</small>
       </button>
-      <Comments article_id={article_id} />
+      <Comments article_id={article_id} currentArticle={currentArticle} />
     </article>
   );
 };

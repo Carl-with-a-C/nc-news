@@ -42,6 +42,15 @@ export const getComments = (article_id) => {
       console.log(error);
     });
 };
+export const postComment = (article_id, body) => {
+  const urlString = `/articles/${article_id}/comments`;
+
+  return thingsApi
+    .post(urlString, { username: "grumpy19", body: body.body })
+    .then(({ data }) => {
+      console.log(data);
+    });
+};
 
 export const updateVote = (article_id) => {
   const urlString = `/articles/${article_id}`;
