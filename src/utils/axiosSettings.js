@@ -10,7 +10,6 @@ export const getArticleList = () => {
   return thingsApi
     .get(urlString)
     .then(({ data }) => {
-      console.log(data);
       return data.articles;
     })
     .catch((error) => {

@@ -35,9 +35,10 @@ a {
 }
 
 #back-btn {
-  margin: -1em 0 1em 0;
-  color: #ffa001;
-  border: solid 3px #ffa001;
+  width: 4em;
+  height: 4em;
+  border: none;
+  padding-bottom: 1.5em;
 }
 
 /* html {
@@ -127,7 +128,7 @@ a {
 .ArticleList li > h2 {
   font-size: 28px;
   line-height: 0.8em;
-  max-height: 100px;
+  height: 80px;
   overflow-y: hidden;
   padding-bottom: 2.5px;
   font-family: "Inter ", sans-serif;
@@ -173,7 +174,7 @@ a {
   color: #0b0905;
   margin: 0 0.75em 0 0.75em;
   align-content: center;
-  padding: 3em 1.2em 1em 1.2em;
+  padding: 3em 1.2em 3em 1.2em;
   border-radius: 45px 45px 0 0;
   box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
   overflow-y: scroll;
@@ -210,10 +211,6 @@ a {
   color: #017d84;
 }
 
-.Article img {
-  width: 4em;
-}
-
 .Article button {
   display: flex;
   align-items: center;
@@ -222,6 +219,12 @@ a {
 #upvote-btn {
   border: none;
   background: none;
+  align-items: stretch;
+}
+
+#upvote-img {
+  width: 4em;
+  margin-bottom: 4em;
 }
 
 /*-------COMMENTS--------*/
@@ -246,6 +249,7 @@ a {
 .Comments h2 {
   font-size: 18px;
   color: #fff;
+  letter-spacing: 0px;
 }
 
 .Comments p {
@@ -254,11 +258,13 @@ a {
 
 .Comments button {
   background: none;
-  border: solid 3px #01aab3;
-  border-radius: 50px;
+  border: none;
   color: #01aab3;
   font-size: 30px;
   font-weight: 400;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
+  align-items: stretch;
+  display: flex;
+  padding-top: 0.5em;
 }

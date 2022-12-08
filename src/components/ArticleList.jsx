@@ -28,7 +28,7 @@ const ArticleList = () => {
                   <h2>{article.title}</h2>
                   {/* <h3>{article.body}</h3> */}
                   <p>
-                    {article.author} | {article.created_at}
+                    <strong>{article.author}</strong> | {article.created_at}
                   </p>
                 </li>
               </Link>

@@ -10,6 +10,7 @@ const Article = () => {
   const [currentArticle, setCurrentArticle] = useState([{}]);
   const [articleLoading, setArticleLoading] = useState(true);
   const [articleVotes, setArticleVotes] = useState(0);
+  const [err, setErr] = useState(null);
 
   const { article_id } = useParams();
 
@@ -23,7 +24,11 @@ const Article = () => {
 
   const addVote = () => {
     setArticleVotes((articleVotes) => articleVotes + 1);
-    updateVote(article_id);
+    setErr(null);
+    updateVote(article_id).catch((err) => {
+      setArticleVotes((articleVotes) => articleVotes - 1);
+      setErr("Something went wrong, please try again.");
+    });
   };
 
   return articleLoading ? (
@@ -42,7 +47,7 @@ const Article = () => {
           addVote();
         }}
       >
-        <img src={upvoteIcon} alt="upvote icon"></img>
+        <img id="upvote-img" src={upvoteIcon} alt="upvote icon"></img>
         <small>{articleVotes}</small>
       </button>
       <Comments article_id={article_id} />
