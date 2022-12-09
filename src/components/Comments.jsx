@@ -4,6 +4,7 @@ import closeBtn from "../icons/closeBtn.svg";
 import upvoteIcon from "../icons/upvoteIcon.svg";
 import addCommentIcon from "../icons/addCommentIcon.svg";
 import { postComment } from "../utils/axiosSettings";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 const Comments = ({ article_id, currentArticle }) => {
   const [comments, setComments] = useState([{}]);
@@ -31,6 +32,7 @@ const Comments = ({ article_id, currentArticle }) => {
   }, [article_id]);
 
   const submitComment = (comment) => {
+    setMessageSent(true);
     setComments((currentComments) => {
       return [comment, ...currentComments];
     });
@@ -42,12 +44,14 @@ const Comments = ({ article_id, currentArticle }) => {
           body: "",
           created_at: Date(),
           votes: 0,
-          comment_id: "",
+          comment_id: apiComment.comment_id,
         });
         setCommentMessage("Comment Added. Thanks!");
+        setMessageSent(false);
       })
       .catch((err) => {
         setCommentMessage("Something went wrong. Please try again");
+        setMessageSent(false);
       });
   };
 
@@ -95,12 +99,17 @@ const Comments = ({ article_id, currentArticle }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(e.target[0].value);
-            submitComment(newComment);
+            if (newComment.body) {
+              submitComment(newComment);
+            } else {
+              setCommentMessage("Please type comment before uploading");
+            }
           }}
         >
           <label htmlFor="comment_body">
-            <input
+            <textarea
+              rows="5"
+              cols="60"
               className="Comment--input"
               onChange={(e) =>
                 setNewComment({ ...newComment, body: e.target.value })
@@ -110,9 +119,13 @@ const Comments = ({ article_id, currentArticle }) => {
               name="comment_body"
               value={newComment.body}
               placeholder="Add a comment..."
-            ></input>
+            ></textarea>
           </label>
-          <button id="submit-btn" type="submit">
+          <button
+            disabled={messageSent ? true : false}
+            id="submit-btn"
+            type="submit"
+          >
             Upload
           </button>
         </form>
@@ -124,7 +137,7 @@ const Comments = ({ article_id, currentArticle }) => {
           return (
             <li className="Comment-card" key={comment.comment_id}>
               <h1>{comment.author}</h1>
-              <h2>{comment.created_at}</h2>
+              <h2>{Date(comment.created_at)}</h2>
               <p>{comment.body}</p>
               <button>
                 <img src={upvoteIcon} alt="upvote icon"></img>

@@ -45,7 +45,8 @@ const Article = () => {
       <h1>{currentArticle.topic}</h1>
       <h2>{currentArticle.title}</h2>
       <small>
-        <strong>{currentArticle.author}</strong> | {currentArticle.created_at}
+        <strong>{currentArticle.author}</strong> |{" "}
+        {Date(currentArticle.created_at)}
       </small>
       <p>{currentArticle.body}</p>
       <button
