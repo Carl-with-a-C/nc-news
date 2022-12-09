@@ -4,16 +4,17 @@ const thingsApi = axios.create({
   baseURL: "https://filthy-neckerchief-tuna.cyclic.app/api",
 });
 
-export const getArticleList = () => {
+export const getArticleList = (selectedTopic) => {
   const urlString = "/articles";
+  // selectedTopic !== "" ? `articles?topic=${selectedTopic}` : "/articles";
 
   return thingsApi
-    .get(urlString)
+    .get(urlString, { params: { topic: selectedTopic } })
     .then(({ data }) => {
       return data.articles;
     })
     .catch((error) => {
-      console.log(error);
+      return error;
     });
 };
 
@@ -26,7 +27,7 @@ export const getArticle = (article_id) => {
       return data;
     })
     .catch((error) => {
-      console.log(error);
+      return error;
     });
 };
 
@@ -39,7 +40,7 @@ export const getComments = (article_id) => {
       return data;
     })
     .catch((error) => {
-      console.log(error);
+      return error;
     });
 };
 export const postComment = (article_id, body) => {
@@ -49,6 +50,9 @@ export const postComment = (article_id, body) => {
     .post(urlString, { username: "grumpy19", body: body.body })
     .then(({ data }) => {
       return data;
+    })
+    .catch((error) => {
+      return error;
     });
 };
 
@@ -61,6 +65,6 @@ export const updateVote = (article_id) => {
       return data.article;
     })
     .catch((error) => {
-      console.log(error);
+      return error;
     });
 };

@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 
 export const Login = ({ setUser }) => {
   return (
-    <Link to="/articles">
-      <button
-        onClick={() => {
-          setUser("grumpy19");
-        }}
-      >
-        <div className="Login">LOGIN</div>
-      </button>
-    </Link>
+    <main className="Login">
+      <h1>welcome</h1>
+      <Link to="/articles">
+        <button
+          onClick={() => {
+            setUser("grumpy19");
+          }}
+        >
+          LOGIN
+        </button>
+      </Link>
+    </main>
   );
 };
