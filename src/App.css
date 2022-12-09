@@ -85,13 +85,13 @@ a {
 
 .Header ul {
   max-width: 80vw;
-}
-
-.Header li {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
+
+/* .Header li {
+
+} */
 
 /*--------NAVBAR-----------*/
 

@@ -48,7 +48,7 @@ export const postComment = (article_id, body) => {
   return thingsApi
     .post(urlString, { username: "grumpy19", body: body.body })
     .then(({ data }) => {
-      console.log(data);
+      return data;
     });
 };
 

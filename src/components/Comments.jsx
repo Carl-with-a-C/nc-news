@@ -44,7 +44,7 @@ const Comments = ({ article_id, currentArticle }) => {
           body: "",
           created_at: Date(),
           votes: 0,
-          comment_id: "",
+          comment_id: apiComment.comment_id,
         });
         setCommentMessage("Comment Added. Thanks!");
         setMessageSent(false);
