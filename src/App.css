@@ -63,7 +63,7 @@ a {
   background-color: #3200e0;
   color: #ffa001;
   font-family: "Anek Kannada", sans-serif;
-  width: 100.08vw;
+  width: 100vw;
 }
 
 .App-layer2 {
@@ -75,7 +75,6 @@ a {
 
 .Header {
   width: 100vw;
-
   font-size: 22px;
   font-weight: 600;
   padding: 0.5em 0 0.5em 2em;
@@ -89,10 +88,20 @@ a {
   justify-content: space-between;
 }
 
-/* .Header li {
+.Header a {
+  text-decoration: none;
+}
 
-} */
+.Header li {
+  align-self: center;
+  font-size: 24px;
+}
 
+#user-welcome {
+  font-size: 18px;
+  font-weight: 400;
+  color: #f4e6d9;
+}
 /*--------NAVBAR-----------*/
 
 .Navbar {
@@ -113,10 +122,84 @@ a {
   border-radius: 25px;
   padding: 0.1em 1em;
 }
+/*---------LOGIN-----------*/
+
+.Login {
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.75em 0 0.75em;
+  border-radius: 45px 45px 0 0;
+  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  background-color: #ffa001;
+  color: #4c3d39;
+}
+
+.Login h1 {
+  font-size: 95px;
+  letter-spacing: -6px;
+}
+
+.Login button {
+  padding: 0.2em 1em 0 1em;
+  width: max-content;
+  height: 2em;
+  border: none;
+  border-radius: 40px;
+  font-size: 25px;
+  font-weight: 600;
+  background: none;
+  color: #fff;
+}
 
 /*---------TOPICS-----------*/
 
+.Topics {
+  background-color: #fff;
+  color: #0b0905;
+  margin: 0 0.75em 0 0.75em;
+  align-content: center;
+  padding: 1.5em 1.2em 6em 1.2em;
+  border-radius: 45px 45px 0 0;
+  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  max-height: 14vh;
+  margin-bottom: -40px;
+}
+
+.Topics ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Topics button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.Topics button:hover,
+button:focus {
+  color: #01aab3;
+}
+
 /*-----ARTICLE_LIST----------*/
+
+.ArticleListLoading {
+  background-color: #dcd8d8;
+  color: #0b0905;
+  margin: 0 0.75em 0 0.75em;
+  align-content: center;
+  padding: 3em 1.2em 1em 1.2em;
+  border-radius: 45px;
+  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  height: 90vh;
+  overflow-x: hidden;
+}
 
 .ArticleList {
   background-color: #dcd8d8;
@@ -135,54 +218,34 @@ a {
   background-color: rgb(0, 0, 0, 0.05);
   border-radius: 45px;
   display: inline-block;
-  padding: 0.75em 2em 0.75em 2em;
+  padding: 1em 2em 0.75em 2em;
   letter-spacing: -5%;
   line-height: 1.8em;
   margin-bottom: 8px;
-  min-height: 120px;
 }
 
 .ArticleList li > h1 {
   font-family: "Julius", sans-serif;
   color: #3200e0;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .ArticleList li > h2 {
   font-size: 28px;
   line-height: 0.8em;
-  height: 80px;
   overflow-y: hidden;
-  padding-bottom: 2.5px;
+  padding-bottom: 5px;
   font-family: "Inter ", sans-serif;
   letter-spacing: -1.5px;
-
-  background: -webkit-linear-gradient(
-    270deg,
-    rgb(76, 61, 57, 1) 70%,
-    rgba(76, 61, 57, 0.1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 4px;
 }
 
 .ArticleList li > h3 {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 400;
   line-height: 0.8em;
   letter-spacing: -7.5%;
-  max-height: 50px;
-  overflow-y: hidden;
-  padding-top: 4px;
-  background: -webkit-linear-gradient(
-    270deg,
-    rgb(76, 61, 57, 1) 0%,
-    rgba(76, 61, 57, 0.1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 4px;
+  padding: 4px 0;
+  color: #4c3d39;
 }
 
 .ArticleList li > p {
@@ -191,6 +254,18 @@ a {
 }
 
 /*---------ARTICLE--------*/
+
+.ArticleLoading {
+  background-color: #dcd8d8;
+  color: #0b0905;
+  margin: 0 0.75em 0 0.75em;
+  align-content: center;
+  padding: 3em 1.2em 1em 1.2em;
+  border-radius: 45px;
+  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  height: 90vh;
+  overflow-x: hidden;
+}
 
 .Article {
   background-color: #fff;

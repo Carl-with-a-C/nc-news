@@ -16,6 +16,9 @@ const Article = () => {
 
   const { article_id } = useParams();
 
+  const articleDate = new Date(currentArticle.created_at);
+  const formattedDate = articleDate.toDateString();
+
   useEffect(() => {
     getArticle(article_id).then(({ article }) => {
       setCurrentArticle(article);
@@ -34,7 +37,9 @@ const Article = () => {
   };
 
   return articleLoading ? (
-    <h1>Article Loading...</h1>
+    <article className="ArticleLoading">
+      <h1>Article Loading...</h1>
+    </article>
   ) : (
     <article className="Article">
       <Link to="/articles">
@@ -45,8 +50,7 @@ const Article = () => {
       <h1>{currentArticle.topic}</h1>
       <h2>{currentArticle.title}</h2>
       <small>
-        <strong>{currentArticle.author}</strong> |{" "}
-        {Date(currentArticle.created_at)}
+        <strong>{currentArticle.author}</strong> | {formattedDate}
       </small>
       <p>{currentArticle.body}</p>
       <button
