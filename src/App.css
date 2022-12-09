@@ -74,12 +74,23 @@ a {
 /*----------HEADER---------*/
 
 .Header {
-  text-align: left;
+  width: 100vw;
+
   font-size: 22px;
   font-weight: 600;
   padding: 0.5em 0 0.5em 2em;
   border-radius: 45px 45px 0 0;
   box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+}
+
+.Header ul {
+  max-width: 80vw;
+}
+
+.Header li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /*--------NAVBAR-----------*/
