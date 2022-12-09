@@ -137,7 +137,7 @@ const Comments = ({ article_id, currentArticle }) => {
           return (
             <li className="Comment-card" key={comment.comment_id}>
               <h1>{comment.author}</h1>
-              <h2>{comment.created_at}</h2>
+              <h2>{Date(comment.created_at)}</h2>
               <p>{comment.body}</p>
               <button>
                 <img src={upvoteIcon} alt="upvote icon"></img>
