@@ -110,6 +110,7 @@ const Comments = ({ article_id, currentArticle }) => {
             <textarea
               rows="5"
               cols="60"
+              wrap="soft"
               className="Comment--input"
               onChange={(e) =>
                 setNewComment({ ...newComment, body: e.target.value })
@@ -134,10 +135,12 @@ const Comments = ({ article_id, currentArticle }) => {
 
       <ul>
         {comments.map((comment) => {
+          const commentDate = new Date(comment.created_at);
+          const formattedDate = commentDate.toUTCString();
           return (
             <li className="Comment-card" key={comment.comment_id}>
               <h1>{comment.author}</h1>
-              <h2>{Date(comment.created_at)}</h2>
+              <h2>{formattedDate}</h2>
               <p>{comment.body}</p>
               <button>
                 <img src={upvoteIcon} alt="upvote icon"></img>

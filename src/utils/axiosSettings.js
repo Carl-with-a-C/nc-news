@@ -4,12 +4,11 @@ const thingsApi = axios.create({
   baseURL: "https://filthy-neckerchief-tuna.cyclic.app/api",
 });
 
-export const getArticleList = (selectedTopic) => {
+export const getArticleList = (selectedTopic, sortBy) => {
   const urlString = "/articles";
-  // selectedTopic !== "" ? `articles?topic=${selectedTopic}` : "/articles";
 
   return thingsApi
-    .get(urlString, { params: { topic: selectedTopic } })
+    .get(urlString, { params: { topic: selectedTopic, sort_by: sortBy } })
     .then(({ data }) => {
       return data.articles;
     })
