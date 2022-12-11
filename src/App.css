@@ -88,11 +88,6 @@ a {
   width: 40px;
 }
 
-.ArticleList button {
-  background: none;
-  border: none;
-}
-
 /* html {
   color-scheme: dark light;
 } */
@@ -103,7 +98,7 @@ a {
   background-color: #3200e0;
   color: #ffa001;
   font-family: "Anek Kannada", sans-serif;
-  width: 100vw;
+  width: 100.08vw;
 }
 
 .App-layer2 {
@@ -308,11 +303,15 @@ button:focus {
   font-size: 12px;
 }
 
-#sort-btn {
+.ArticleList button {
   background: none;
   border: none;
-  font-weight: 600;
-  font-size: 24px;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
 }
 
 .sortList {
@@ -328,6 +327,18 @@ button:focus {
 .sortList li {
   padding: 0.5em 2em 0.3em 2em;
   background-color: #fff;
+}
+
+#sort-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+#order-btn {
+  display: flex;
+  align-items: center;
 }
 
 /*---------ARTICLE--------*/

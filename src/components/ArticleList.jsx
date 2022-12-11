@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import { getArticleList } from "../utils/axiosSettings";
 import { Link } from "react-router-dom";
+import swapIcon from "../icons/swapIcon.svg";
 
 const ArticleList = ({ currentTopic }) => {
   const [articleList, setArticleList] = useState([{}]);
   const [loading, setLoading] = useState(true);
   const [sortClicked, setSortClicked] = useState(false);
   const [sortBy, setSortBy] = useState();
+  const [order, setOrder] = useState("desc");
 
   useEffect(() => {
-    getArticleList(currentTopic, sortBy).then((apiResult) => {
+    getArticleList(currentTopic, sortBy, order).then((apiResult) => {
       setArticleList(apiResult);
       setLoading(false);
     });
-  }, [currentTopic, sortBy]);
+  }, [currentTopic, sortBy, order]);
 
   return loading ? (
     <section className="ArticleListLoading">
@@ -22,14 +24,26 @@ const ArticleList = ({ currentTopic }) => {
   ) : (
     <section className="ArticleList">
       <button id="articleList-btn"></button>
-      <button
-        id="sort-btn"
-        onClick={() => {
-          setSortClicked(!sortClicked);
-        }}
-      >
-        sort by
-      </button>
+      <div className="sort-container">
+        <button
+          id="sort-btn"
+          onClick={() => {
+            setSortClicked(!sortClicked);
+          }}
+        >
+          sort by
+        </button>
+        <button
+          id="order-btn"
+          onClick={() => {
+            order === "desc" ? setOrder("asc") : setOrder("desc");
+          }}
+        >
+          {order}
+          <img src={swapIcon} alt="swap icon"></img>
+        </button>
+      </div>
+
       {sortClicked ? (
         <section>
           <ul className="sortList">
