@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-export const Login = ({ setUser }) => {
+export const Login = ({ user, setUser }) => {
   return (
-    <main className="Login">
+    <main className={user ? "Login" : "LoginHome"}>
       <h1>welcome</h1>
       <Link to="/articles">
         <button

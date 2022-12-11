@@ -34,6 +34,41 @@ a {
   color: inherit;
 }
 
+#topic-btn {
+  width: 60px;
+  height: 8px;
+  background-color: rgba(255, 160, 1, 0.5);
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+  margin-top: -14px;
+  margin-bottom: 14px;
+  border: none;
+}
+
+#header-btn {
+  width: 60px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+  border: none;
+  margin-bottom: 4px;
+}
+
+#articleList-btn {
+  width: 60px;
+  height: 8px;
+  background-color: rgba(1, 170, 179, 0.5);
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+  border: none;
+  margin-top: -22px;
+  margin-bottom: 20px;
+}
+
 #back-btn {
   width: 3em;
   height: 3em;
@@ -63,7 +98,7 @@ a {
   background-color: #3200e0;
   color: #ffa001;
   font-family: "Anek Kannada", sans-serif;
-  width: 100vw;
+  width: 100.08vw;
 }
 
 .App-layer2 {
@@ -74,10 +109,11 @@ a {
 /*----------HEADER---------*/
 
 .Header {
-  width: 100vw;
+  /* width: 100vw;   */
   font-size: 22px;
   font-weight: 600;
-  padding: 0.5em 0 0.5em 2em;
+  margin: auto;
+  padding: 0.5em 2em;
   border-radius: 45px 45px 0 0;
   box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
 }
@@ -138,12 +174,25 @@ a {
   color: #4c3d39;
 }
 
-.Login h1 {
+.LoginHome {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffa001;
+  color: #4c3d39;
+}
+
+.Login h1,
+.LoginHome h1 {
   font-size: 95px;
   letter-spacing: -6px;
 }
 
-.Login button {
+.Login button,
+.LoginHome button {
   padding: 0.2em 1em 0 1em;
   width: max-content;
   height: 2em;
@@ -165,6 +214,7 @@ a {
   padding: 1.5em 1.2em 6em 1.2em;
   border-radius: 45px 45px 0 0;
   box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  overflow-y: hidden;
   overflow-x: hidden;
   max-height: 14vh;
   margin-bottom: -40px;
@@ -206,7 +256,7 @@ button:focus {
   color: #0b0905;
   margin: 0 0.75em 0 0.75em;
   align-content: center;
-  padding: 3em 1.2em 1em 1.2em;
+  padding: 2em 1.2em 1em 1.2em;
   border-radius: 45px;
   box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
   overflow-y: auto;
@@ -215,7 +265,7 @@ button:focus {
 
 .ArticleList li {
   min-width: 100%;
-  background-color: rgb(0, 0, 0, 0.05);
+  background-color: rgba(1, 1, 1, 0.2);
   border-radius: 45px;
   display: inline-block;
   padding: 1em 2em 0.75em 2em;
@@ -245,12 +295,50 @@ button:focus {
   line-height: 0.8em;
   letter-spacing: -7.5%;
   padding: 4px 0;
-  color: #4c3d39;
+  color: #fff;
 }
 
 .ArticleList li > p {
-  color: #3200e0;
+  color: #4c3d39;
   font-size: 12px;
+}
+
+.ArticleList button {
+  background: none;
+  border: none;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.sortList {
+  background-color: rgb(0, 0, 0, 0.05);
+  color: #1e1e1e;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 2em;
+  border-radius: 25px;
+  padding: 5px 5px 0 5px;
+}
+
+.sortList li {
+  padding: 0.5em 2em 0.3em 2em;
+  background-color: #fff;
+}
+
+#sort-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+#order-btn {
+  display: flex;
+  align-items: center;
 }
 
 /*---------ARTICLE--------*/
@@ -391,8 +479,6 @@ button:focus {
   min-height: 5em;
   padding: 0.5em;
   font-size: 25px;
-  overflow-wrap: break-word;
-  word-break: break-all;
   margin-bottom: 20px;
   width: 90vw;
 }

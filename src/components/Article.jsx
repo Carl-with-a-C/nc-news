@@ -8,7 +8,7 @@ import { useParams } from "react-router";
 import { getArticle } from "../utils/axiosSettings";
 import { updateVote } from "../utils/axiosSettings";
 
-const Article = () => {
+const Article = ({ setCurrentTopic }) => {
   const [currentArticle, setCurrentArticle] = useState([{}]);
   const [articleLoading, setArticleLoading] = useState(true);
   const [articleVotes, setArticleVotes] = useState(0);
@@ -43,7 +43,12 @@ const Article = () => {
   ) : (
     <article className="Article">
       <Link to="/articles">
-        <button id="backArrow-btn">
+        <button
+          onClick={() => {
+            setCurrentTopic();
+          }}
+          id="backArrow-btn"
+        >
           <img src={backArrowIcon} alt="back button"></img>
         </button>
       </Link>

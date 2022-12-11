@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar user={user} />
       <div className="App-layer2">
         <Header user={user} />
         <Topics
@@ -24,16 +24,15 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Login setUser={setUser} />} />
+          <Route path="/" element={<Login user={user} setUser={setUser} />} />
           <Route
-            path="/articles"
+            path={currentTopic ? "/articles/:topic" : "/articles"}
             element={<ArticleList currentTopic={currentTopic} />}
           />
           <Route
-            path="/topic/:topic"
-            element={<ArticleList currentTopic={currentTopic} />}
+            path="/articles/:topic/:article_id"
+            element={<Article setCurrentTopic={setCurrentTopic} />}
           />
-          <Route path="/articles/:article_id" element={<Article />} />
         </Routes>
       </div>
     </div>
