@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 
-export const Login = ({ user, setUser }) => {
+export const Home = ({ user, setUser }) => {
   return (
-    <main className={user ? "Login" : "LoginHome"}>
+    <main className={user ? "Home" : "LoginHome"}>
       <h1>welcome</h1>
       <Link to="/articles">
         <button
           onClick={() => {
-            setUser("grumpy19");
+            setUser("login");
           }}
         >
-          LOGIN
+          see things
         </button>
       </Link>
     </main>
