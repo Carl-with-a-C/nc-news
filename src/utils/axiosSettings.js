@@ -57,6 +57,19 @@ export const postComment = (article_id, body) => {
     });
 };
 
+export const deleteCommentById = (comment_id) => {
+  const urlString = `/comments/${comment_id}`;
+
+  return thingsApi
+    .delete(urlString)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
 export const updateVote = (article_id) => {
   const urlString = `/articles/${article_id}`;
 

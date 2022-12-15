@@ -1,8 +1,10 @@
 import { getComments } from "../utils/axiosSettings";
+import { deleteCommentById } from "../utils/axiosSettings";
 import { useState, useEffect } from "react";
 import closeBtn from "../icons/closeBtn.svg";
 import upvoteIcon from "../icons/upvoteIcon.svg";
 import addCommentIcon from "../icons/addCommentIcon.svg";
+import deleteCommentIcon from "../icons/deleteCommentIcon.svg";
 import { postComment } from "../utils/axiosSettings";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 
@@ -12,6 +14,7 @@ const Comments = ({ article_id, currentArticle }) => {
   const [commentsOpen, setCommentsOpen] = useState(false);
   const [commentFormOpen, setCommentFormOpen] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
+  const [commentList, setCommentList] = useState([]);
 
   const user = { username: "grumpy19" };
 
@@ -33,12 +36,13 @@ const Comments = ({ article_id, currentArticle }) => {
 
   const submitComment = (comment) => {
     setMessageSent(true);
-    setComments((currentComments) => {
-      return [comment, ...currentComments];
+    setComments((comments) => {
+      return [comment, ...comments];
     });
 
     postComment(article_id, comment)
       .then((apiComment) => {
+        console.log(apiComment, "<<<api comment");
         setNewComment({
           author: "grumpy19",
           body: "",
@@ -51,6 +55,27 @@ const Comments = ({ article_id, currentArticle }) => {
       })
       .catch((err) => {
         setCommentMessage("Something went wrong. Please try again");
+        setMessageSent(false);
+      });
+  };
+
+  {
+    console.log(comments);
+  }
+
+  const handleDeleteComment = (comment_id) => {
+    setMessageSent(true);
+    deleteCommentById(comment_id)
+      .then(() => {
+        setComments((currComments) => {
+          return currComments.filter((comments) => {
+            const newComments = { ...comments };
+            return newComments.comment_id !== comment_id;
+          });
+        });
+      })
+      .then(() => {
+        setCommentMessage("Comment Deleted");
         setMessageSent(false);
       });
   };
@@ -146,6 +171,20 @@ const Comments = ({ article_id, currentArticle }) => {
                 <img src={upvoteIcon} alt="upvote icon"></img>
                 <small>{comment.votes}</small>
               </button>
+              {comment.author == user.username ? (
+                <button
+                  id="delete-comment--btn"
+                  disabled={messageSent ? true : false}
+                  value={comment.comment_id}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDeleteComment(comment.comment_id);
+                  }}
+                >
+                  <h2 id="delete-comment-text">delete comment</h2>
+                  <img src={deleteCommentIcon} alt="delete comment icon"></img>
+                </button>
+              ) : null}
             </li>
           );
         })}

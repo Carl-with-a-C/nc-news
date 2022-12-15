@@ -133,10 +133,19 @@ a {
   font-size: 24px;
 }
 
+.Header button {
+  background: none;
+  border: none;
+  color: #ffa001;
+}
+
+.Header button:focus {
+  color: #1e1e1e;
+}
+
 #user-welcome {
   font-size: 18px;
   font-weight: 400;
-  color: #f4e6d9;
 }
 /*--------NAVBAR-----------*/
 
@@ -156,9 +165,9 @@ a {
   gap: 1.5em;
   background-color: rgba(244, 230, 217, 0.5);
   border-radius: 25px;
-  padding: 0.1em 1em;
+  padding: 0.2em 1em;
 }
-/*---------LOGIN-----------*/
+/*---------LOGIN-----------!!!!!NEED TO RENAME TO 'HOME'*/
 
 .Login {
   height: 90vh;
@@ -213,7 +222,7 @@ a {
   align-content: center;
   padding: 1.5em 1.2em 6em 1.2em;
   border-radius: 45px 45px 0 0;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   overflow-y: hidden;
   overflow-x: hidden;
   max-height: 14vh;
@@ -246,7 +255,7 @@ button:focus {
   align-content: center;
   padding: 3em 1.2em 1em 1.2em;
   border-radius: 45px;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   height: 90vh;
   overflow-x: hidden;
 }
@@ -258,7 +267,7 @@ button:focus {
   align-content: center;
   padding: 2em 1.2em 1em 1.2em;
   border-radius: 45px;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -350,7 +359,7 @@ button:focus {
   align-content: center;
   padding: 3em 1.2em 1em 1.2em;
   border-radius: 45px;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   height: 90vh;
   overflow-x: hidden;
 }
@@ -360,9 +369,9 @@ button:focus {
   color: #0b0905;
   margin: 0 0.75em 0 0.75em;
   align-content: center;
-  padding: 2em 1.2em 3em 1.2em;
-  border-radius: 45px 45px 0 0;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  padding: 2em 1.2em 1em 1.2em;
+  border-radius: 45px;
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -418,7 +427,7 @@ button:focus {
 .Comments {
   background-color: #4c3d39;
   border-radius: 45px;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   padding: 0.5em 1.2em 1em 1.2em;
   margin: 0 -1.2em 0 -1.2em;
   min-width: 50vw;
@@ -428,7 +437,7 @@ button:focus {
   background-color: #4c3d39;
   border-radius: 45px;
   border: none;
-  box-shadow: 0 -6px 6px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   padding: 1em;
 }
 
@@ -439,6 +448,15 @@ button:focus {
 
 .Comments li {
   margin-bottom: 3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Comments li > h2 {
+  padding-bottom: 0;
+  width: 500px;
 }
 
 .Comments h1 {
@@ -500,12 +518,22 @@ button:focus {
   border-bottom: 2px #ffa001 solid;
 }
 
-#addComment-btn h2 {
+#addComment-btn h2,
+#delete-comment--btn h2 {
   align-self: center;
   padding: 5px;
 }
 
-#addComment-btn img {
+#delete-comment--btn {
+  display: flex;
+  padding: 20px 0 0 0;
+  width: 200px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+#addComment-btn img,
+#delete-comment--btn img {
   width: 35px;
 }
 

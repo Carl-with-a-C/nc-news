@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Topics from "./components/Topics";
 import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
-import { Login } from "./components/Login";
+import { Home } from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -16,7 +16,11 @@ function App() {
     <div className="App">
       <Navbar user={user} />
       <div className="App-layer2">
-        <Header user={user} />
+        <Header
+          user={user}
+          setUser={setUser}
+          setCurrentTopic={setCurrentTopic}
+        />
         <Topics
           setCurrentTopic={setCurrentTopic}
           currentTopic={currentTopic}
@@ -24,7 +28,7 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Login user={user} setUser={setUser} />} />
+          <Route path="/" element={<Home user={user} setUser={setUser} />} />
           <Route
             path={currentTopic ? "/articles/:topic" : "/articles"}
             element={<ArticleList currentTopic={currentTopic} />}
