@@ -165,7 +165,7 @@ a {
   gap: 1.5em;
   background-color: rgba(244, 230, 217, 0.5);
   border-radius: 25px;
-  padding: 0.1em 1em;
+  padding: 0.2em 1em;
 }
 /*---------LOGIN-----------!!!!!NEED TO RENAME TO 'HOME'*/
 
@@ -369,8 +369,8 @@ button:focus {
   color: #0b0905;
   margin: 0 0.75em 0 0.75em;
   align-content: center;
-  padding: 2em 1.2em 3em 1.2em;
-  border-radius: 45px 45px 0 0;
+  padding: 2em 1.2em 1em 1.2em;
+  border-radius: 45px;
   box-shadow: 0 -4px 4px rgb(0, 0, 0, 0.2);
   overflow-y: scroll;
   overflow-x: hidden;
